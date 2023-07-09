@@ -97,15 +97,23 @@ Route::get('/about',function(){
 Route::get('/service',function(){
 
     $page_name="Service page";
+
     $service_list=['computer','web','graphics','digital'];
 
-    return view('service',compact('page_name','service_list'));
+    $product_count=10;
+    $color="red";
+    $product=[];
+
+    return view('service',compact('page_name','service_list','product_count','color','product'));
 
 })->name('service');
 
 Route::get('/contact',function(){
     
     $page_name='Contact Page';
+
     $title='Contact List';
+
     return view('contact',compact('page_name','title'));
+
 })->name('contact');
