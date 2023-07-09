@@ -7,16 +7,16 @@
     <title>Bootstrap demo</title>
 
     @include('include.style')
+
   </head>
   <body>
-
+    
     @include('include.navbar')
     
-
     <div class="content">
       @yield('content')
     </div>
 
-@include('include.script')
+    @include('include.script')
   </body>
 </html>

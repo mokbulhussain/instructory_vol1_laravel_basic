@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 //named route
+/*
 Route::get('/', function () {
     return view('home');
 })->name('home');
@@ -29,6 +30,7 @@ Route::get('/service',function(){
 Route::get('/contact',function(){
     return view('contact');
 })->name('contact');
+*/
 
 
 // parameter with route
@@ -57,6 +59,7 @@ Route::get('/contact',function(){
 // })->where('name','[A-Za-z]+');
 
 
+/*
 
 // route parameter with regular expression & multiple parameter
 Route::get('/user/{id}/{name}',function($id,$name){
@@ -70,3 +73,39 @@ Route::get('/user/{id}/{name}',function($id,$name){
 Route::get('/category/{category_name}',function($category_name){
     echo $category_name;
 })->whereIn('category_name',['electornics','movie','books']);
+
+
+*/
+
+
+
+
+
+// ------------ passing data & rendering data with route and view
+
+Route::get('/', function () {
+    return view('home',['page_name'=>'Home Pages']);
+})->name('home');
+
+Route::get('/about',function(){
+    return view("about",[
+        'page_name'=>'About Page',
+        'title'=>'About'
+    ]);
+})->name('about');
+
+Route::get('/service',function(){
+
+    $page_name="Service page";
+    $service_list=['computer','web','graphics','digital'];
+
+    return view('service',compact('page_name','service_list'));
+
+})->name('service');
+
+Route::get('/contact',function(){
+    
+    $page_name='Contact Page';
+    $title='Contact List';
+    return view('contact',compact('page_name','title'));
+})->name('contact');

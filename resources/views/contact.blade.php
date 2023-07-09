@@ -2,5 +2,6 @@
 
 
 @section('content')
-    <h1>Contact Page</h1>
+<h1>{{$page_name}}</h1>
+<h2>{{$title}}</h2>
 @endsection
