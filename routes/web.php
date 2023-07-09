@@ -114,6 +114,24 @@ Route::get('/contact',function(){
 
     $title='Contact List';
 
-    return view('contact',compact('page_name','title'));
+    $products=[
+        1=>[
+            'name'=>'laptop',
+            'color'=>"red",
+            'price'=>3000
+        ],
+        2=>[
+            'name'=>'laptop2',
+            'color'=>"red",
+            'price'=>3400
+        ],
+        3=>[
+            'name'=>'laptop3',
+            'color'=>"blue",
+            'price'=>5000
+        ]
+        ];
+
+    return view('contact',compact('page_name','title','products'));
 
 })->name('contact');
