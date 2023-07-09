@@ -33,15 +33,7 @@
 
 {{-- conditon with loop --}}
 @forelse ($products as $key=>$product)
-<ul>
-  @if ($key==2)
-  @continue
-  @endif
-  <li>{{$key}}</li>
-  <li>{{$product['name']}}</li>
-  <li>{{$product['color']}}</li>
-  <li>{{$product['price']}}</li>
-</ul>
+@include('partial.partial_template')
 @empty
   <p>Product Not Found</p>
 @endforelse
