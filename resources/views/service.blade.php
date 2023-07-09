@@ -1,5 +1,6 @@
 @extends('master')
 
+@section('title','service-page')
 
 @section('content')
     <h1>{{$page_name}}</h1>
