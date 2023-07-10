@@ -236,3 +236,27 @@ Route::get('/', function (Request $request) {
 Route::get('/download',function(){
     return response()->download(public_path('/Book1.pdf'),'excel book file');
 });
+
+
+
+
+//------------------- group Route-------------
+ Route::prefix('page')->name('admin.')->group(function(){
+
+    Route::get('/', function () {
+        return view('home');
+    })->name('home');
+    
+    Route::get('/about',function(){
+        return view("about");
+    })->name('about');
+    
+    Route::get('/service',function(){
+        return view('service');
+    })->name('service');
+    
+    Route::get('/contact',function(){
+        return view('contact');
+    })->name('contact');
+
+ });
