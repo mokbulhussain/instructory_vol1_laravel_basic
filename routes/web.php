@@ -184,10 +184,37 @@ Route::get('/', function (Request $request) {
 
 
     // another page redirect
-    return redirect('/contact');
+    // return redirect('/contact');
 
 
 
+
+    // json data response
+
+    $title='Contact List';
+
+    $products=[
+        1=>[
+            'name'=>'laptop',
+            'color'=>"red",
+            'price'=>3000
+        ],
+        2=>[
+            'name'=>'laptop2',
+            'color'=>"red",
+            'price'=>3400
+        ],
+        3=>[
+            'name'=>'laptop3',
+            'color'=>"blue",
+            'price'=>5000
+        ]
+        ];
+
+        return response()->json([
+            'product'=>$products,
+            'title'=>$title
+        ]);
 
 
 
