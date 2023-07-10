@@ -165,6 +165,12 @@ Route::get('/', function (Request $request) {
     );
     */
 
+
+
+
+    // response data
+
+    /*
     $data=[
         'page_name'=>'Home Page',
         'Title'=>'HOme'
@@ -173,6 +179,17 @@ Route::get('/', function (Request $request) {
     return response($data)
     ->header('Content-Type','application/json')
     ->cookie('My IDcard','Mahmud Ibrahim',3600);
+
+    */
+
+
+    // another page redirect
+    return redirect('/contact');
+
+
+
+
+
 
 
 
