@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -135,3 +136,33 @@ Route::get('/contact',function(){
     return view('contact',compact('page_name','title','products'));
 
 })->name('contact');
+
+
+
+
+
+
+// ------------ Request Life cycle & response life cycle
+
+Route::get('/', function (Request $request) {
+
+    dd(
+        $request->path(),
+        $request->is('/'),
+        $request->fullUrl(),
+        $request->host(),
+        $request->httpHost(),
+        $request->schemeAndHttpHost(),
+        $request->routeIs(),
+        $request->header('X-Header-Name'),
+        $request->header('x-header-name','default'),
+        $request->bearerToken(),
+        $request->ip(),
+        $request->prefers(['text/html','application/json'])
+
+    );
+
+
+
+    // return view('home',['page_name'=>'Home Pages']);
+})->name('home');
