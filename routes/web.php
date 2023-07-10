@@ -145,6 +145,8 @@ Route::get('/contact',function(){
 // ------------ Request Life cycle & response life cycle
 
 Route::get('/', function (Request $request) {
+    
+    /*
 
     dd(
         $request->path(),
@@ -161,6 +163,16 @@ Route::get('/', function (Request $request) {
         $request->prefers(['text/html','application/json'])
 
     );
+    */
+
+    $data=[
+        'page_name'=>'Home Page',
+        'Title'=>'HOme'
+    ];
+
+    return response($data)
+    ->header('Content-Type','application/json')
+    ->cookie('My IDcard','Mahmud Ibrahim',3600);
 
 
 
