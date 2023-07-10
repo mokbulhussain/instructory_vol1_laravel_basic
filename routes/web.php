@@ -260,3 +260,25 @@ Route::get('/download',function(){
     })->name('contact');
 
  });
+
+
+
+
+
+
+
+
+ 
+// ------------ Input & Request from user ---------
+
+Route::get('/', function (Request $request) {
+
+    // http://127.0.0.1:8000/?search="bag"&name="mokbul"&mobile="22444"
+
+    // dd($request->all());
+    // dd($request->input('search'));
+    
+    dd($request->collect());
+
+});
+    
