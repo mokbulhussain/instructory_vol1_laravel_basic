@@ -187,7 +187,7 @@ Route::get('/', function (Request $request) {
     // return redirect('/contact');
 
 
-
+/*
 
     // json data response
 
@@ -216,9 +216,23 @@ Route::get('/', function (Request $request) {
             'title'=>$title
         ]);
 
+        */
+
+
+
+
 
 
 
 
     // return view('home',['page_name'=>'Home Pages']);
 })->name('home');
+
+
+
+
+// File Downoloads
+
+Route::get('/download',function(){
+    return response()->download(public_path('/Book1.pdf'),'excel book file');
+});
