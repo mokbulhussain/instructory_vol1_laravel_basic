@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FrontContoller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -79,7 +80,7 @@ Route::get('/category/{category_name}',function($category_name){
 */
 
 
-
+/*
 
 
 // ------------ passing data & rendering data with route and view
@@ -216,7 +217,7 @@ Route::get('/', function (Request $request) {
             'title'=>$title
         ]);
 
-        */
+        
 
 
 
@@ -238,7 +239,7 @@ Route::get('/download',function(){
 });
 
 
-
+/*
 
 //------------------- group Route-------------
  Route::prefix('page')->name('admin.')->group(function(){
@@ -261,6 +262,8 @@ Route::get('/download',function(){
 
  });
 
+ */
+
 
 
 
@@ -270,6 +273,8 @@ Route::get('/download',function(){
 
  
 // ------------ Input & Request from user ---------
+
+/*
 
 Route::get('/', function (Request $request) {
 
@@ -281,4 +286,16 @@ Route::get('/', function (Request $request) {
     dd($request->collect());
 
 });
-    
+
+*/
+
+
+
+
+
+// ---- controler with route
+
+Route::get('/',[FrontContoller::class,'home'])->name('home');
+Route::get('/about-page',[FrontContoller::class,'about'])->name('about');
+Route::get('/service-page',[FrontContoller::class,'service'])->name('service');
+Route::get('/contact',[FrontContoller::class,'contact'])->name('contact');
