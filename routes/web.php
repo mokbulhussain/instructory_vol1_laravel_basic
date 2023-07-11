@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\FrontContoller;
+use App\Http\Controllers\UserInfoController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -299,3 +300,9 @@ Route::get('/',[FrontContoller::class,'home'])->name('home');
 Route::get('/about-page',[FrontContoller::class,'about'])->name('about');
 Route::get('/service-page',[FrontContoller::class,'service'])->name('service');
 Route::get('/contact',[FrontContoller::class,'contact'])->name('contact');
+
+
+
+// single controler
+// single controller use oy only single information ar jonno ba allada babe data matain korar jonno
+Route::get('/user-info',UserInfoController::class)->name('userinfo');
