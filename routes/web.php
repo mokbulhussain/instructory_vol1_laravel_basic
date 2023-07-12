@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\FrontContoller;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserInfoController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -306,3 +307,10 @@ Route::get('/contact',[FrontContoller::class,'contact'])->name('contact');
 // single controler
 // single controller use oy only single information ar jonno ba allada babe data matain korar jonno
 Route::get('/user-info',UserInfoController::class)->name('userinfo');
+
+
+
+// Resource controller
+// resource controller use korle create, edit, update, delete easy hoye jai
+
+Route::resource('/posts',PostController::class);
