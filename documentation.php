@@ -208,3 +208,83 @@ Psy Shell v0.11.18 (PHP 8.2.0 — cli) by Justin Hileman
       },
     ],
   }
+
+
+
+
+
+
+
+  //--------------- single model & multiple model data retrieving with tinker----------
+
+  $ php artisan tinker
+Psy Shell v0.11.18 (PHP 8.2.0 — cli) by Justin Hileman
+> Category::find(1)
+[!] Aliasing 'Category' to 'App\Models\Category' for this Tinker session.
+= App\Models\Category {#7135
+    id: 1,
+    name: "Medicine",
+    slug: "medicine",
+    is_active: 1,
+    created_at: "2023-07-14 03:41:07",
+    updated_at: "2023-07-14 03:46:18",
+  }
+
+> Category::findorFail(2)
+= App\Models\Category {#7141
+    id: 2,
+    name: "computer",
+    slug: "computer",
+    is_active: 1,
+    created_at: "2023-07-14 03:50:01",
+    updated_at: "2023-07-14 03:50:01",
+  }
+
+>
+
+
+
+$ php artisan tinker
+Psy Shell v0.11.18 (PHP 8.2.0 — cli) by Justin Hileman
+> $category = new Category();
+[!] Aliasing 'Category' to 'App\Models\Category' for this Tinker session.
+= App\Models\Category {#7126}
+
+> $category->first()
+= App\Models\Category {#7128
+    id: 1,
+    name: "Medicine",
+    slug: "medicine",
+    is_active: 1,
+    created_at: "2023-07-14 03:41:07",
+    updated_at: "2023-07-14 03:46:18",
+  }
+
+> $category->last();
+
+   BadMethodCallException  Call to undefined method App\Models\Category::last().
+
+> $category->find([1,2])
+= Illuminate\Database\Eloquent\Collection {#7138
+    all: [
+      App\Models\Category {#7144
+        id: 1,
+        name: "Medicine",
+        slug: "medicine",
+        is_active: 1,
+        created_at: "2023-07-14 03:41:07",
+        updated_at: "2023-07-14 03:46:18",
+      },
+      App\Models\Category {#7141
+        id: 2,
+        name: "computer",
+        slug: "computer",
+        is_active: 1,
+        created_at: "2023-07-14 03:50:01",
+        updated_at: "2023-07-14 03:50:01",
+      },
+    ],
+  }
+
+>
+
