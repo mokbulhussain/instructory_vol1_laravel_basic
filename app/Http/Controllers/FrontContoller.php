@@ -2,12 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class FrontContoller extends Controller
 {
     public function home(){
-        return view('home',['page_name'=>'Home Pages']);
+        // $users=User::all();
+        $users=User::latest()->get();
+        $page_name="Home Page";
+        return view('home',compact('page_name','users'));
     }
 
     public function about(){
