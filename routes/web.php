@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\FrontContoller;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserInfoController;
@@ -314,3 +315,4 @@ Route::get('/user-info',UserInfoController::class)->name('userinfo');
 // resource controller use korle create, edit, update, delete easy hoye jai
 
 Route::resource('/posts',PostController::class);
+Route::resource('/category',CategoryController::class);
