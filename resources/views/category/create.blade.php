@@ -3,6 +3,14 @@
 
 @section('content')
 <div class="container">
+
+    @if(session('status'))
+      <div class="bg-danger">
+        {{session('status')}}
+      </div>
+    @endif
+
+
     <form action="{{route('category.store')}}" method="POST">
         @csrf
         <div class="mb-3">
