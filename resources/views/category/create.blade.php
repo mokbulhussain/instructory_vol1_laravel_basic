@@ -10,7 +10,7 @@
           <input type="text" name="category_name" class="form-control @error('category_name')
             is-invalid
           @enderror" id="exampleInputEmail1" aria-describedby="emailHelp">
-
+        
           @error('category_name')
             <span class="invalid-feedback" role="alert">
               <strong>{{$message}}</strong>
