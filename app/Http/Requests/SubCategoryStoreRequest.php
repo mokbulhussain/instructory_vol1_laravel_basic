@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Models\Category;
 use Illuminate\Foundation\Http\FormRequest;
 
 class SubCategoryStoreRequest extends FormRequest
@@ -29,4 +30,7 @@ class SubCategoryStoreRequest extends FormRequest
             'is_active' => 'nullable'
         ];
     }
+
+
+    
 }

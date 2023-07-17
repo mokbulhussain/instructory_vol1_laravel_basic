@@ -5,9 +5,13 @@
 <div class="container">
 
 
+  <div class="row">
+    <div class="col-xl-12">
+        <a href="{{route('subcategory.index')}}" class="btn btn-primary">Sub Category</a>
+    </div>
+  </div>
 
-
-    <form action="{{route('subcategory.store')}}" method="POST">
+    <form action="{{route('subcategory.store')}}" method="POST" class="my-5">
         @csrf
         <div class="mb-3">
             <select class="form-select @error('category_id') is-invalid @enderror" name="category_id" aria-label="Default select example">
@@ -15,10 +19,7 @@
                 @foreach ($categories as $category )
                 <option value="{{$category->id}}">{{$category->name}}</option>
                 @endforeach
-              
- 
               </select>
-
               @error('category_id')
               <span class="invalid-feedback" role="alert">
                 <strong>{{$message}}</strong>
