@@ -2,13 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\CategoryStoreRequest;
+use App\Http\Requests\SubCategoryStoreRequest;
 use App\Models\Category;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Session;
-use Illuminate\Support\Str;
 
-class CategoryController extends Controller
+class SubCategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -20,6 +18,7 @@ class CategoryController extends Controller
         //
     }
 
+
     /**
      * Show the form for creating a new resource.
      *
@@ -27,7 +26,8 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('category.create');
+        $categories=Category::get(['id','name']);
+        return view('subcategory.create',compact('categories'));
     }
 
     /**
@@ -36,19 +36,9 @@ class CategoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(CategoryStoreRequest $request)
+    public function store(SubCategoryStoreRequest $request)
     {
-
-
-        Category::create([
-            'name'=>$request->category_name,
-            'slug'=>Str::slug($request->category_name),
-            'is_active'=>$request->filled('is_active');
-        ]);
-
-       Session::flash('status','create category successful');
-
-        return back();
+        dd($request->all());
     }
 
     /**

@@ -17,7 +17,9 @@
           <label for="exampleInputText" class="form-label">Category</label>
           <input type="text" name="category_name" class="form-control @error('category_name')
             is-invalid
-          @enderror" id="exampleInputText" aria-describedby="emailHelp">
+          @enderror" id="exampleInputText" aria-describedby="emailHelp"
+          value="{{ old('category_name') }}"
+          >
         
           @error('category_name')
             <span class="invalid-feedback" role="alert">

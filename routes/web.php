@@ -3,6 +3,7 @@
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\FrontContoller;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\SubCategoryController;
 use App\Http\Controllers\UserInfoController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -316,3 +317,4 @@ Route::get('/user-info',UserInfoController::class)->name('userinfo');
 
 Route::resource('/posts',PostController::class);
 Route::resource('/category',CategoryController::class);
+Route::resource('/subcategory',SubCategoryController::class);
