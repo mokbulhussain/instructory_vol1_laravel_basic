@@ -14,6 +14,11 @@
     @include('include.navbar')
     
     <div class="content">
+      @if(session('status'))
+      <div class="bg-danger">
+        {{session('status')}}
+      </div>
+    @endif
       @yield('content')
     </div>
 

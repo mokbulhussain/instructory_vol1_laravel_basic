@@ -3,10 +3,14 @@
 
 @section('content')
 <div class="container">
+
+
+
+
     <form action="{{route('subcategory.store')}}" method="POST">
         @csrf
         <div class="mb-3">
-            <select class="form-select" name="category_id" aria-label="Default select example">
+            <select class="form-select @error('category_id') is-invalid @enderror" name="category_id" aria-label="Default select example">
                 <option selected>Open this select menu</option>
                 @foreach ($categories as $category )
                 <option value="{{$category->id}}">{{$category->name}}</option>
@@ -14,6 +18,12 @@
               
  
               </select>
+
+              @error('category_id')
+              <span class="invalid-feedback" role="alert">
+                <strong>{{$message}}</strong>
+              </span>
+            @enderror
         </div>
         <div class="mb-3">
           <label for="exampleInputText" class="form-label">SubCategory</label>
