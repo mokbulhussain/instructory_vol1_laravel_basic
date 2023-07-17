@@ -6,10 +6,10 @@
     <form action="{{route('category.store')}}" method="POST">
         @csrf
         <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label">Category</label>
+          <label for="exampleInputText" class="form-label">Category</label>
           <input type="text" name="category_name" class="form-control @error('category_name')
             is-invalid
-          @enderror" id="exampleInputEmail1" aria-describedby="emailHelp">
+          @enderror" id="exampleInputText" aria-describedby="emailHelp">
         
           @error('category_name')
             <span class="invalid-feedback" role="alert">
@@ -18,10 +18,6 @@
           @enderror
         </div>
 
-        <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Category Slug</label>
-            <input type="text" name="category_slug" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-          </div>
 
           <div class="form-check">
             <input class="form-check-input" name="is_active" type="checkbox" value="" id="flexCheckDefault">
