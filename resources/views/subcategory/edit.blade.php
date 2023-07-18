@@ -11,7 +11,7 @@
     </div>
   </div>
 
-    <form action="{{route('subcategory.update')}}" method="POST" class="my-5">
+    <form action="{{route('subcategory.update',['subcategory'=>$subcategory->id])}}" method="POST" class="my-5">
         @method('PUT')
         @csrf
         <div class="mb-3">
