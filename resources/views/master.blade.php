@@ -6,7 +6,10 @@
     
     <title>@yield('title')</title>
 
-    @include('include.style')
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+    {{-- @include('include.style') --}}
+    {{-- @vite('resources/js/app.js') --}}
 
   </head>
   <body>
@@ -21,6 +24,7 @@
     @endif
       @yield('content')
     </div>
+
 
     @include('include.script')
   </body>
