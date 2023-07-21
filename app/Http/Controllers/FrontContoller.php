@@ -9,7 +9,7 @@ class FrontContoller extends Controller
 {
     public function home(){
         // $users=User::all();
-        $users=User::latest()->get();
+        $users=User::with('nidcard')->get();
         $page_name="Home Page";
         return view('home',compact('page_name','users'));
     }

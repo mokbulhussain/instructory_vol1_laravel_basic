@@ -21,6 +21,8 @@
             <th scope="row">{{$user->id}}</th>
             <td>{{$user->name}}</td>
             <td>{{$user->email}}</td>
+            {{-- ?? - mane hosse jodi data na take tokkon null string value nebe --}}
+            <td>{{$user->nidcard->card_number ?? ''}}</td>
             <td>{{$user->phone}}</td>
           </tr>
 
