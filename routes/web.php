@@ -318,3 +318,6 @@ Route::get('/user-info',UserInfoController::class)->name('userinfo');
 Route::resource('/posts',PostController::class);
 Route::resource('/category',CategoryController::class);
 Route::resource('/subcategory',SubCategoryController::class);
+
+
+Route::get('/book',[FrontContoller::class,'books']);

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Book;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -59,5 +60,10 @@ class FrontContoller extends Controller
             ];
     
         return view('contact',compact('page_name','title','products'));
+    }
+
+    public function books(){
+        $books=Book::with(['author','publisher','bookType'])->get();
+        return $books;
     }
 }
