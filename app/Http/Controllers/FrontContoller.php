@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Book;
+use App\Models\Publisher;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -63,7 +64,14 @@ class FrontContoller extends Controller
     }
 
     public function books(){
-        $books=Book::with(['author','publisher','bookType'])->get();
-        return $books;
+        // $books=Book::with(['author','publisher','bookType'])->get();
+
+        // relation exstice or relation ase ki na check kore
+        // $books=Book::has('publisher')->get();
+
+        // post count with relation
+        $publishers=Publisher::withCount('books')->get();
+        // dd($publishers);
+        return $publishers;
     }
 }
