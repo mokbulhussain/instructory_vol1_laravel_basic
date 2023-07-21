@@ -17,7 +17,9 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        
+        $categories=Category::withCount('subcategories')->get();
+        return view('category.index',compact('categories'));
     }
 
     /**
@@ -43,7 +45,7 @@ class CategoryController extends Controller
         Category::create([
             'name'=>$request->category_name,
             'slug'=>Str::slug($request->category_name),
-            'is_active'=>$request->filled('is_active');
+            'is_active'=>$request->filled('is_active')
         ]);
 
        Session::flash('status','create category successful');

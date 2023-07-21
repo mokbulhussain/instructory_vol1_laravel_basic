@@ -20,7 +20,7 @@
               </li>
 
               <li class="nav-item">
-                <a class="nav-link" href="{{route('category.create')}}">Create gotegory</a>
+                <a class="nav-link" href="{{route('category.index')}}">Category</a>
               </li>
 
               <li class="nav-item">
