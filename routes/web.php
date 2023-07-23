@@ -324,3 +324,5 @@ Route::get('/book',[FrontContoller::class,'books']);
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/register', [App\Http\Controllers\CustomRegisterController::class, 'registerFormShow'])->name('register');
+Route::post('/register', [App\Http\Controllers\CustomRegisterController::class, 'registerUser'])->name('register.store');
