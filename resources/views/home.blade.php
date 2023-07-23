@@ -1,34 +1,23 @@
-@extends('master')
+@extends('layouts.app')
 
-@section('title','Home-page')
 @section('content')
-    <h1>{{$page_name}}</h1>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">{{ __('Dashboard') }}</div>
 
-    <h2>User List</h2>
-    <table class="table">
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
-          </tr>
-        </thead>
-        <tbody>
-            @foreach ($users as $user)
-                
-          <tr>
-            <th scope="row">{{$user->id}}</th>
-            <td>{{$user->name}}</td>
-            <td>{{$user->email}}</td>
-            {{-- ?? - mane hosse jodi data na take tokkon null string value nebe --}}
-            <td>{{$user->nidcard->card_number ?? ''}}</td>
-            <td>{{$user->phone}}</td>
-          </tr>
+                <div class="card-body">
+                    @if (session('status'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('status') }}
+                        </div>
+                    @endif
 
-          @endforeach
-         
-        </tbody>
-      </table>
-
+                    {{ __('You are logged in!') }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 @endsection
